@@ -11,38 +11,98 @@ notes = {
         'id': 1,
         'title': 'Test Note',
         'body': 'This is a test note object that will be available by default',
-        'created_at': datetime.now(),
+        'created_at': str(datetime.now()),
         'created_by': 'admin',
+        'edit_history': [{
+            'edited_at': str(datetime.now()),
+            'edited_by': 'A User',
+        }],
     },
 }
-max_id = 1
 
 
 def get_notes():
+    """"
+    Return all notes
+    """
     global notes
     return notes
 
 
 def get_note(id):
+    """
+    Returns a single note given its numeric id
+
+    Args:
+    id:int
+
+    Returns:
+    dict
+    """
     return get_notes().get(id, None)
 
 
 def update_note(id, update):
+    """
+    For a given note id and dict of changes, updates the note with the changes
+    and updates the edit history to contain the user who made the change and the
+    current time.
+
+    Args:
+    id:int
+    update:dict
+        edited_by:string (required)
+        title:string
+        body:string
+
+    Returns:
+    dict
+    """
     note = get_note(id)
+    editor = update.pop('edited_by')
     note.update(update)
+    note['edit_history'].append({
+        'edited_by': editor,
+        'edited_at': str(datetime.now()),
+    })
     return note
 
 
 def remove_note(id):
+    """
+    Removes the note for the given id and returns True if removed,
+    False if the note was not removed or it did not exist in the first place.
+
+    Args:
+    id:int
+
+    Returns:
+    bool
+    """
     return get_notes().pop(id, False) is not False
 
 
 def add_note(note):
-    global max_id
-    max_id = max_id + 1
-    get_notes()[max_id] = note
-    note['id'] = max_id
-    note['created_at'] = datetime.now()
+    """
+    Adds a new note, assigning it a new auto-incremented id and
+    created_at field with the current timestamp. A new note also
+    has an empty edit_history list. The new note is returned.
+
+    Args:
+    note:dict
+        created_by:string (required)
+        title:string
+        body:string
+
+    Returns:
+    dict
+    """
+    notes = get_notes()
+    new_id = int(max(notes.keys())) + 1
+    get_notes()[new_id] = note
+    note['id'] = new_id
+    note['created_at'] = str(datetime.now())
+    note['edited_by'] = []
     return note
 
 
