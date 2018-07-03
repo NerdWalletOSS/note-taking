@@ -1,2 +1,2 @@
-# sample-node-app
+# note-taking
 A basic note-taking API
