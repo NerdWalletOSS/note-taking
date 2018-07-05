@@ -1,7 +1,7 @@
 # Note Taking API
 A basic Python Flask-based note-taking API. Supports CRUD operations via a RESTful API for manipulating basic note objects.
 
-** Installation **
+**Installation**
 
 Run all instructions from within the note-taking repository root folder.
 
@@ -15,7 +15,7 @@ Once you have `pip`, the only dependency required is Flask:
 
 ```sudo pip install flask```
 
-** Running **
+**Running**
 
 Once you have all dependencies installed, the server can be run with:
 
@@ -23,7 +23,7 @@ Once you have all dependencies installed, the server can be run with:
 
 This will bind the web server to port 5000 locally.
 
-** Troubleshooting **
+**Troubleshooting**
 
 ```socket.error: [Errno 48] Address already in use```
 Ensure you do not have any other application running on port 5000, then try starting the server again
@@ -49,11 +49,15 @@ A note object looks like the following:
   }
 ```
 
+**LIST**
+
 `GET /notes`
 Returns all notes
 
 *Returns*:
 array of note objects
+
+**GET**
 
 `GET /notes/:id`
 Returns a single note given its numeric id
@@ -63,6 +67,8 @@ id:int
 
 *Returns*:
 note object
+
+**CREATE**
 
 `POST /notes`
 Adds a new note, assigning it a new auto-incremented id and
@@ -78,6 +84,8 @@ note:dict
 *Returns*:
 note object
 
+**UPDATE**
+
 `POST /notes/:id`
 For a given note id and dict of changes, updates the note with the changes
 and updates the edit history to contain the user who made the change and the
@@ -92,6 +100,8 @@ update:dict
 
 *Returns*:
 note object
+
+**DELETE**
 
 `DELETE /notes/:id`
 Removes the note for the given id and returns True if removed,
