@@ -102,7 +102,7 @@ def add_note(note):
     get_notes()[new_id] = note
     note['id'] = new_id
     note['created_at'] = str(datetime.now())
-    note['edited_by'] = []
+    note['edited_history'] = []
     return note
 
 
