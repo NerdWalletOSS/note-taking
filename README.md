@@ -11,9 +11,9 @@ If `pip` is not installed, first ensure you have [easy_install](https://setuptoo
 
 ```sudo easy_install pip```
 
-Once you have `pip`, the only dependency required is Flask:
+Once you have `pip`, the only dependencies required are Flask and Flask CORS:
 
-```sudo pip install flask```
+```sudo pip install flask flask_cors```
 
 **Running**
 
