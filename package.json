@@ -1,7 +1,7 @@
 {
   "name": "note-taking",
   "version": "1.0.0",
-  "description": "A basic Python Flask-based note-taking API. Supports CRUD operations via a RESTful API for manipulating basic note objects.",
+  "description": "A basic note-taking API which Supports CRUD operations via a RESTful API for manipulating note objects.",
   "main": "server.js",
   "dependencies": {
     "body-parser": "^1.18.3",
