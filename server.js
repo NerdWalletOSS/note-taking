@@ -52,7 +52,7 @@ const updateNote = (id, update) => {
   const note = getNote(id);
   _.assign(
     note,
-    _.pick(update, ['title', 'body', 'edited_by'])
+    _.pick(update, ['title', 'body'])
   );
   note.edit_history.push({
     edited_by: update.edited_by,
