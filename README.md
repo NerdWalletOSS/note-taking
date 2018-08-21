@@ -1,7 +1,7 @@
 # Note Taking API
-A basic Python Flask-based note-taking API. Supports CRUD operations via a RESTful API for manipulating basic note objects.
+A basic note-taking API which Supports CRUD operations via a RESTful API for manipulating note objects. Available in Python/Flask (`server.py`) and Node/Express (`server.js`). Use whichever you feel most comfortable with.
 
-**Installation**
+### Python Installation
 
 Run all instructions from within the note-taking repository root folder.
 
@@ -23,7 +23,12 @@ Once you have all dependencies installed, the server can be run with:
 
 This will bind the web server to port 5000 locally.
 
-**Troubleshooting**
+### Node Installation
+As a prerequisite make you have node (min `v6.x`) installed. From this directory run `npm install` to install dependencies.
+
+Then to run the server: `npm start`.
+
+### Troubleshooting
 
 ```socket.error: [Errno 48] Address already in use```
 Ensure you do not have any other application running on port 5000, then try starting the server again
@@ -112,4 +117,3 @@ id:int
 
 *Returns*:
 boolean
-
