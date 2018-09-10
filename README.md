@@ -107,7 +107,7 @@ current time.
 
 ```
 id:int
-update:dict
+body:json object
     edited_by:string (required)
     title:string
     body:string
