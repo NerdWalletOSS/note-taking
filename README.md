@@ -68,7 +68,10 @@ array of note objects
 Returns a single note given its numeric id
 
 *Args*:
+
+```
 id:int
+```
 
 *Returns*:
 note object
@@ -81,12 +84,16 @@ created\_at field with the current timestamp. A new note also
 has an empty edit\_history list. The new note is returned.
 
 *Args*:
+
+```
 note:dict
-    created\_by:string (required)
+    created_by:string (required)
     title:string
     body:string
+```
 
 *Returns*:
+
 note object
 
 **UPDATE**
@@ -97,13 +104,17 @@ and updates the edit history to contain the user who made the change and the
 current time.
 
 *Args*:
+
+```
 id:int
 update:dict
-    edited\_by:string (required)
+    edited_by:string (required)
     title:string
     body:string
+```
 
 *Returns*:
+
 note object
 
 **DELETE**
@@ -113,7 +124,13 @@ Removes the note for the given id and returns True if removed,
 False if the note was not removed or it did not exist in the first place.
 
 *Args*:
+
+```
 id:int
+```
 
 *Returns*:
+
+```
 boolean
+```
