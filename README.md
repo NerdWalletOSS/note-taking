@@ -43,11 +43,11 @@ A note object looks like the following:
     "id": 1,
     "title": "Test Note",
     "body": "This is a test note object that will be available by default",
-    "created_at": "2018-07-05 14:22:49.491376",
+    "created_at": 1536601583871,
     "created_by": "admin",
     "edit_history": [
       {
-        "edited_at": "2018-07-05 14:22:49.491390",
+        "edited_at": 1536601593871,
         "edited_by": "A User"
       }
     ],
