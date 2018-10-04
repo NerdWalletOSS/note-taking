@@ -24,7 +24,7 @@ Once you have all dependencies installed, the server can be run with:
 This will bind the web server to port 5000 locally.
 
 ### Node Installation
-As a prerequisite make you have node (min `v6.x`) installed. From this directory run `npm install` to install dependencies.
+As a prerequisite make sure you have node (min `v6.x`) installed. From this directory run `npm install` to install dependencies.
 
 Then to run the server: `npm start`.
 
