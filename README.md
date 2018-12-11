@@ -87,7 +87,7 @@ has an empty edit\_history list. The new note is returned.
 
 ```
 note:dict
-    created_by:string (required)
+    created_by:string
     title:string
     body:string
 ```
@@ -101,14 +101,14 @@ note object
 `POST /notes/:id`
 For a given note id and dict of changes, updates the note with the changes
 and updates the edit history to contain the user who made the change and the
-current time.
+current time (if edited_by is provided).
 
 *Args*:
 
 ```
 id:int
 body:json object
-    edited_by:string (required)
+    edited_by:string
     title:string
     body:string
 ```
