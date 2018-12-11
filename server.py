@@ -51,7 +51,7 @@ def update_note(id, update):
     Args:
     id:int
     update:dict
-        edited_by:string (required)
+        edited_by:string
         title:string
         body:string
 
@@ -59,12 +59,17 @@ def update_note(id, update):
     dict
     """
     note = get_note(id)
-    editor = update.pop('edited_by')
+
+    editor = None
+    if update.get('edited_by'):
+        editor = update.pop('edited_by')
+
     note.update(update)
-    note['edit_history'].append({
-        'edited_by': editor,
-        'edited_at': str(datetime.now()),
-    })
+    if editor:
+        note['edit_history'].append({
+            'edited_by': editor,
+            'edited_at': str(datetime.now()),
+        })
     return note
 
 
@@ -90,7 +95,7 @@ def add_note(note):
 
     Args:
     note:dict
-        created_by:string (required)
+        created_by:string
         title:string
         body:string
 
