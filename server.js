@@ -54,10 +54,12 @@ const updateNote = (id, update) => {
     note,
     _.pick(update, ['title', 'body'])
   );
-  note.edit_history.push({
-    edited_by: update.edited_by,
-    edited_at: Date.now(),
-  });
+  if (update.edited_by) {
+    note.edit_history.push({
+      edited_by: update.edited_by,
+      edited_at: Date.now(),
+    });
+  }
   return note;
 };
 
