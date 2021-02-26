@@ -7,7 +7,7 @@ Run all instructions from within the note-taking repository root folder.
 
 Runs on Python 3.4+, installation guide [found here](https://docs.python-guide.org/starting/install3/osx/#install3-osx).
 
-You should already have `pip` installed if you're runnign Python 3.4+, so the only dependencies required are Flask and Flask CORS:
+You should already have `pip` installed if you're running Python 3.4+, so the only dependencies required are Flask and Flask CORS:
 
 ```sudo python3 -m pip install flask flask_cors```
 
