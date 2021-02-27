@@ -5,21 +5,17 @@ A basic note-taking API which Supports CRUD operations via a RESTful API for man
 
 Run all instructions from within the note-taking repository root folder.
 
-Runs on Python 2.7, installation guide [found here](http://docs.python-guide.org/en/latest/starting/install/osx/#install-osx).
+Runs on Python 3.4+, installation guide [found here](https://docs.python-guide.org/starting/install3/osx/#install3-osx).
 
-If `pip` is not installed, first ensure you have [easy_install](https://setuptools.readthedocs.io/en/latest/easy_install.html#installing-easy-install) installed and then install with:
+You should already have `pip` installed if you're running Python 3.4+, so the only dependencies required are Flask and Flask CORS:
 
-```sudo easy_install pip```
-
-Once you have `pip`, the only dependencies required are Flask and Flask CORS:
-
-```sudo pip install flask flask_cors```
+```sudo python3 -m pip install flask flask_cors```
 
 **Running**
 
 Once you have all dependencies installed, the server can be run with:
 
-```FLASK_APP=server.py flask run```
+```FLASK_APP=server.py FLASK_ENV=development flask run```
 
 This will bind the web server to port 5000 locally.
 

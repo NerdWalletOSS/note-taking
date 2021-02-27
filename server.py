@@ -116,7 +116,7 @@ def add_note(note):
 
 @app.route('/notes')
 def get_all_notes():
-    return jsonify(get_notes().values())
+    return jsonify(list(get_notes().values()))
 
 
 @app.route('/notes/<int:id>')
