@@ -74,7 +74,7 @@ app.post('/notes', (req, res) => {
 });
 
 app.get('/notes', (req, res) => {
-  res.json(getNotes());
+  res.json(Object.values(getNotes()));
 });
 
 app.get('/notes/:id', (req, res) => {
