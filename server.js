@@ -1,5 +1,4 @@
 const express = require('express');
-const _ = require('lodash');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 
@@ -24,9 +23,7 @@ const notes = {
 };
 
 
-const getNextId = () => _.parseInt(
-  _.maxBy(Object.keys(notes), _.parseInt)
-) + 1;
+const getNextId = () => Number.parseInt(Math.max(...Object.keys(notes).map(Number.parseInt)), 10) + 1;
 
 const addNote = ({ title, body, created_by }) => {
   const id = getNextId();
@@ -48,12 +45,12 @@ const getNote = (id) => {
   return note || null;
 };
 
-const updateNote = (id, update) => {
+const updateNote = (id, update = {}) => {
   const note = getNote(id);
-  _.assign(
-    note,
-    _.pick(update, ['title', 'body'])
-  );
+
+  const { title, body } = update;
+  Object.assign(note, { title, body });
+
   if (update.edited_by) {
     note.edit_history.push({
       edited_by: update.edited_by,
@@ -77,7 +74,7 @@ app.post('/notes', (req, res) => {
 });
 
 app.get('/notes', (req, res) => {
-  res.json(_.map(getNotes()));
+  res.json(Object.values(getNotes()));
 });
 
 app.get('/notes/:id', (req, res) => {
