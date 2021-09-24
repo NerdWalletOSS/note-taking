@@ -22,11 +22,11 @@ const notes = {
   },
 };
 
-
-const getNextId = () => Number.parseInt(Math.max(...Object.keys(notes).map(Number.parseInt)), 10) + 1;
+// Generates the next id from the global notes list.
+const createNextId = () => Number.parseInt(Math.max(...Object.keys(notes).map((key) => Number.parseInt(key))), 10) + 1;
 
 const addNote = ({ title, body, created_by }) => {
-  const id = getNextId();
+  const id = createNextId();
   notes[id] = {
     id,
     title,
